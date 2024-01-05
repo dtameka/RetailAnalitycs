@@ -7,6 +7,15 @@
 В данном проекте создается база данных сети магазинов на Postgresql.
 Yужно создать базу данных со знаниями о клиентах розничных сетей, а также написать представления и процедуры, необходимые для создания персональных предложений.
 
+## Запуск проекта
+
+Проект может быть развернут с помощью docker с автоматической загрузкой всех данных.
+Команды:
+* sudo docker build -t my_postgres_image .
+* sudo docker run --rm --name my_postgres -p 5431:5432 -v "$(pwd)":/var/lib/postgresql/data -e POSTGRES_PASSWORD=postgres my_postgres_image
+
+* Можно так - sudo docker run --rm --name my_postgres -p 5431:5432 -e POSTGRES_PASSWORD=postgres my_postgres_image
+
 ## Logical view of database model
 
 Данные, описанные в таблицах из раздела [Входные данные](#входные-данные) заполняются пользователем.
