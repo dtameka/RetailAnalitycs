@@ -7,18 +7,22 @@
 В данном проекте создается база данных сети магазинов на Postgresql.
 Yужно создать базу данных со знаниями о клиентах розничных сетей, а также написать представления и процедуры, необходимые для создания персональных предложений.
 
-## диаграмма проекта
+## Диаграмма проекта
 
-![диаграмма](src/miscelaneous/diagram.pdf)
+![диаграмма1](misc/images/diagram1.png)
+![диаграмма2](misc/images/diagram2.png)
 
 ## Запуск проекта
 
 Проект может быть развернут с помощью docker с автоматической загрузкой всех данных.
-Команды:
+
 * sudo docker build -t my_postgres_image .
 * sudo docker run --rm --name my_postgres -p 5431:5432 -v "$(pwd)":/var/lib/postgresql/data -e POSTGRES_PASSWORD=postgres my_postgres_image
 
-* Можно так - sudo docker run --rm --name my_postgres -p 5431:5432 -e POSTGRES_PASSWORD=postgres my_postgres_image
+* Если первый run не сработал, можно попробовать так:
+    + sudo docker run --rm --name my_postgres -p 5431:5432 -e POSTGRES_PASSWORD=postgres my_postgres_image
+
+* В src/miscelaneous/debug.sql есть полезные функции, если вы решили все запускать вручнуюю
 
 ## Logical view of database model
 
